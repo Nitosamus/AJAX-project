@@ -5,15 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+system("clear")
+Task.destroy_all
+Category.destroy_all
+Email.destroy_all
 
-require 'faker'
 3.times do
   my_category = Category.create(title: Faker::Book.genre)
-  3.times do
+  2.times do
     my_task = Task.new(title: Faker::Book.title,
-                      deadline: Faker::Date.forward(23),
+                      deadline: Faker::Date.forward(days:23),
                       image: Faker::Avatar.image)
     my_task.category = my_category
     my_task.save
   end
 end
+

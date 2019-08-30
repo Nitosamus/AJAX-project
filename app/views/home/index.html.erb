@@ -6,12 +6,14 @@
   <li><%= category.title  %></li>
   <div class="card">
     <ul>
-      <% category.tasks.each do |task|  %>
-      <li>
+      <% category.tasks.each do |task| %>
+      <li id="list">
         <%= task.title  %>
         <% unless task.deadline.nil? %>
           , to read: <%= task.deadline.strftime('%D')  %>
         <% end %>
+        <%=link_to ("<i class='fas fa-trash-alt'></i>").html_safe , task_path(task.id), method: :delete, remote: true%>
+        <%=check_box_tag :task, 1, false, data: {remote: true, url: url_for(controller: "tasks", action: "update", id: task.id), params: {id: task.id, status: task.status}.to_param, method: "put"} %>
       </li>
       <% end %>
     </ul>

@@ -1,0 +1,10 @@
+
+
+<div id= "email-body">
+	<div><h3>Objet:</h3><%=@email.object%></div>
+	<div>
+		<h3>Contenue:</h3><p><%=@email.body%></p>
+		<%=link_to "Supprimer",class: "btn btn-outline-secondary"%>
+		<%=link_to "Non-lu", class: "btn btn-outline-secondary"%>
+	</div>
+</div>

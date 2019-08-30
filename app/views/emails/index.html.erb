@@ -1,0 +1,28 @@
+<h1> LISTES DES EMAILS</h1>
+
+<%= link_to "recevoir un email", emails_path, role: "button", class: "btn btn-info", method: :post, remote: true%> <br><br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Objet</th>
+      <th scope="col">contenu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >  	
+      <td id="list">
+      	<% @emails.each do |email| %>
+      	<ul class="list-group list-group-horizontal-sm">
+  			<li class="list-group-item"><%=link_to email.object, email_path(email.id), role: "button", class: "btn btn-outline-primary", remote: true%></li><br>
+		</ul>
+		<%end%>
+      </td>
+      <td> 
+      	<div  id="email-body" >
+      		Contenue vide
+      	</div>
+      </td>
+    </tr>
+ </tbody>
+</table>
