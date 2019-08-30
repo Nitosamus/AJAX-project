@@ -4,7 +4,7 @@
 	<div><h3>Objet:</h3><%=@email.object%></div>
 	<div>
 		<h3>Contenue:</h3><p><%=@email.body%></p>
-		<%=link_to "Supprimer",class: "btn btn-outline-secondary"%>
-		<%=link_to "Non-lu", class: "btn btn-outline-secondary"%>
 	</div>
+	<%=link_to "<button type='button' class='btn btn-warning btn-sm'>Supprimer</button>".html_safe, email_path(@email.id), method: :delete, remote: true%>
+	<%=link_to "<button type='button' class='btn btn-info btn-sm'><small>Non-lu</small></button>".html_safe, email_path(@email.id), id: "bt#{@email.id}", method: :put, remote: true %>
 </div>

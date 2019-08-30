@@ -1,2 +1,2 @@
-
-$("#email-body").replaceWith("<%= j render "content", email: @email%>");
+var div = "<%= j render "content", email: @email%>"
+$("#email-body").replaceWith(div);

@@ -1,0 +1,13 @@
+console.log($("#<%=@email.id%>"))
+console.log("<%=@email.read%>")
+
+if ("<%=@email.read%>" === "true")
+	{
+	$("#email-body").css({"background-color": "yellow", "text-decoraton": "line-through", "font-weight": "bold"});
+	$("#bt<%=@email.id%>").text("lu");
+	console.log("<%=@email.read%>")
+}else if ("<%=@email.read%>" === "false") {
+	$("#<%=@email.id%>").css({"background-color": "white", "font-weight":"normal"});
+	alert("faux")
+	$("#bt<%=@email.id%>").text("non-lu");
+}

@@ -14,7 +14,7 @@
       <td id="list">
       	<% @emails.each do |email| %>
       	<ul class="list-group list-group-horizontal-sm">
-  			<li class="list-group-item"><%=link_to email.object, email_path(email.id), role: "button", class: "btn btn-outline-primary", remote: true%></li><br>
+  			<li id = "<%=email.id%>" class="list-group-item"><%=link_to email.object, email_path(email.id), role: "button", class: "btn btn-outline-primary", remote: true%></li><br>
 		</ul>
 		<%end%>
       </td>
